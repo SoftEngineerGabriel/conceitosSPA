@@ -9,33 +9,11 @@
     <nav>
         <a href="/" onclick="route()">Home</a>
         <a href="/about" onclick="route()">Sobre</a>
-        <a href="/contato" onclick="route()">Contato</a>
+        <a href="/contact" onclick="route()">Contato</a>
         <a href="/404" onclick="route()">404</a>
     </nav>
     <div id="app"></div>
 
-    <script>
-        
-        const routes = {
-            "/": "/pages/home.html",
-            "/about": "/pages/about.html",
-            "/contact": "/pages/contact.html",
-            404: "/pages/404.html",
-        }
-
-        function route(event){
-            event = event || window.event;
-            event.preventDefault();
-
-            window.history.pushState({}, "", event.target.href) // vai pegar o histórico do evento que foi removido com a função preventDefault();
-
-            handle();
-        }
-
-        function handle(){
-            const {pathname} = window.location; // a função handle tem a finalidade de registrar (ou "manipular" de forma muito básica) o caminho da URL atual no console do navegador.
-            console.log(pathname);
-        }
-    </script>
+    <script src="./js/index.js" type="module"></script>
 </body>
 </html>
